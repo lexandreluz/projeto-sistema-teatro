@@ -1,0 +1,26 @@
+{
+  "sistemaTeatroApp": {
+    "assento": {
+      "home": {
+        "title": "Assentos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Assento",
+        "createOrEditLabel": "Create or edit a Assento",
+        "notFound": "No Assentos found"
+      },
+      "created": "A new Assento is created with identifier {{ param }}",
+      "updated": "A Assento is updated with identifier {{ param }}",
+      "deleted": "A Assento is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Assento {{ id }}?"
+      },
+      "detail": {
+        "title": "Assento"
+      },
+      "id": "ID",
+      "numeracao": "Numeracao",
+      "status": "Status",
+      "teatro": "Teatro"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="ingresso">
+      <h2 data-cy="ingressoDetailsHeading"><span jhiTranslate="sistemaTeatroApp.ingresso.detail.title">Ingresso</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ ingresso.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistemaTeatroApp.ingresso.idIngresso">Id Ingresso</span></dt>
+        <dd>
+          <span>{{ ingresso.idIngresso }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistemaTeatroApp.ingresso.dataCompra">Data Compra</span></dt>
+        <dd>
+          <span>{{ ingresso.dataCompra | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistemaTeatroApp.ingresso.valor">Valor</span></dt>
+        <dd>
+          <span>{{ ingresso.valor }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistemaTeatroApp.ingresso.evento">Evento</span></dt>
+        <dd>
+          <div *ngIf="ingresso.evento">
+            <a [routerLink]="['/evento', ingresso.evento?.id, 'view']">{{ ingresso.evento?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/ingresso', ingresso.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

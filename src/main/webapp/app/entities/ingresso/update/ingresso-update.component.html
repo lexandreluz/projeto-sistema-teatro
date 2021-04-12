@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-ingresso-heading" data-cy="IngressoCreateUpdateHeading" jhiTranslate="sistemaTeatroApp.ingresso.home.createOrEditLabel">
+        Create or edit a Ingresso
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="sistemaTeatroApp.ingresso.idIngresso" for="field_idIngresso">Id Ingresso</label>
+          <input
+            type="number"
+            class="form-control"
+            name="idIngresso"
+            id="field_idIngresso"
+            data-cy="idIngresso"
+            formControlName="idIngresso"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="sistemaTeatroApp.ingresso.dataCompra" for="field_dataCompra">Data Compra</label>
+          <div class="d-flex">
+            <input
+              id="field_dataCompra"
+              data-cy="dataCompra"
+              type="datetime-local"
+              class="form-control"
+              name="dataCompra"
+              formControlName="dataCompra"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="sistemaTeatroApp.ingresso.valor" for="field_valor">Valor</label>
+          <input type="number" class="form-control" name="valor" id="field_valor" data-cy="valor" formControlName="valor" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="sistemaTeatroApp.ingresso.evento" for="field_evento">Evento</label>
+          <select class="form-control" id="field_evento" data-cy="evento" name="evento" formControlName="evento">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="eventoOption.id === editForm.get('evento')!.value?.id ? editForm.get('evento')!.value : eventoOption"
+              *ngFor="let eventoOption of eventosSharedCollection; trackBy: trackEventoById"
+            >
+              {{ eventoOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

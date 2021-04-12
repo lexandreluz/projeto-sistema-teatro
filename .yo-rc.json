@@ -42,7 +42,9 @@
     "jwtSecretKey": "ZDQwZjA4NmQ1MWE1MGM0ODgxNDc4ODUxNTQ0YmZlZDBlNGMzZWYwNzM4NWZiNDE5MGQ1NDdmNGZhZjEyZDg1N2M5MmM2YTZkNmQwODc4NzU0YWQzZTBjNDU4MDNiOTc5MGM0NDIxZDIzODBjNTEyYWIwN2FmMjU4NjRiNWE0Y2E=",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "reactive": false
+    "reactive": false,
+    "entities": ["Ingresso", "Assento", "Cidade", "Usuario", "Evento", "Teatro"],
+    "lastLiquibaseTimestamp": 1618267974000
   },
   "git-provider": "GitHub",
   "git-company": "alexandeoliveira",

@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="teatro">
+      <h2 data-cy="teatroDetailsHeading"><span jhiTranslate="sistemaTeatroApp.teatro.detail.title">Teatro</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ teatro.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistemaTeatroApp.teatro.idTeatro">Id Teatro</span></dt>
+        <dd>
+          <span>{{ teatro.idTeatro }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistemaTeatroApp.teatro.nomeTeatro">Nome Teatro</span></dt>
+        <dd>
+          <span>{{ teatro.nomeTeatro }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistemaTeatroApp.teatro.endereco">Endereco</span></dt>
+        <dd>
+          <span>{{ teatro.endereco }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistemaTeatroApp.teatro.cidade">Cidade</span></dt>
+        <dd>
+          <div *ngIf="teatro.cidade">
+            <a [routerLink]="['/cidade', teatro.cidade?.id, 'view']">{{ teatro.cidade?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/teatro', teatro.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

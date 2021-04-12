@@ -48,6 +48,17 @@ public class CacheConfiguration {
             createCache(cm, br.com.ticket.domain.User.class.getName());
             createCache(cm, br.com.ticket.domain.Authority.class.getName());
             createCache(cm, br.com.ticket.domain.User.class.getName() + ".authorities");
+            createCache(cm, br.com.ticket.domain.Ingresso.class.getName());
+            createCache(cm, br.com.ticket.domain.Ingresso.class.getName() + ".usuarios");
+            createCache(cm, br.com.ticket.domain.Assento.class.getName());
+            createCache(cm, br.com.ticket.domain.Cidade.class.getName());
+            createCache(cm, br.com.ticket.domain.Cidade.class.getName() + ".teatros");
+            createCache(cm, br.com.ticket.domain.Usuario.class.getName());
+            createCache(cm, br.com.ticket.domain.Evento.class.getName());
+            createCache(cm, br.com.ticket.domain.Evento.class.getName() + ".ingressos");
+            createCache(cm, br.com.ticket.domain.Teatro.class.getName());
+            createCache(cm, br.com.ticket.domain.Teatro.class.getName() + ".eventos");
+            createCache(cm, br.com.ticket.domain.Teatro.class.getName() + ".assentos");
             // jhipster-needle-ehcache-add-entry
         };
     }

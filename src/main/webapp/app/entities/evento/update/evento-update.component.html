@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-evento-heading" data-cy="EventoCreateUpdateHeading" jhiTranslate="sistemaTeatroApp.evento.home.createOrEditLabel">
+        Create or edit a Evento
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="sistemaTeatroApp.evento.idEvento" for="field_idEvento">Id Evento</label>
+          <input type="text" class="form-control" name="idEvento" id="field_idEvento" data-cy="idEvento" formControlName="idEvento" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="sistemaTeatroApp.evento.nomeEvento" for="field_nomeEvento">Nome Evento</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nomeEvento"
+            id="field_nomeEvento"
+            data-cy="nomeEvento"
+            formControlName="nomeEvento"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="sistemaTeatroApp.evento.descricao" for="field_descricao">Descricao</label>
+          <input type="text" class="form-control" name="descricao" id="field_descricao" data-cy="descricao" formControlName="descricao" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="sistemaTeatroApp.evento.teatro" for="field_teatro">Teatro</label>
+          <select class="form-control" id="field_teatro" data-cy="teatro" name="teatro" formControlName="teatro">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="teatroOption.id === editForm.get('teatro')!.value?.id ? editForm.get('teatro')!.value : teatroOption"
+              *ngFor="let teatroOption of teatrosSharedCollection; trackBy: trackTeatroById"
+            >
+              {{ teatroOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

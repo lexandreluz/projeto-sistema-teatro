@@ -1,0 +1,26 @@
+{
+  "sistemaTeatroApp": {
+    "cidade": {
+      "home": {
+        "title": "Cidades",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Cidade",
+        "createOrEditLabel": "Create or edit a Cidade",
+        "notFound": "No Cidades found"
+      },
+      "created": "A new Cidade is created with identifier {{ param }}",
+      "updated": "A Cidade is updated with identifier {{ param }}",
+      "deleted": "A Cidade is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cidade {{ id }}?"
+      },
+      "detail": {
+        "title": "Cidade"
+      },
+      "id": "ID",
+      "nomeCidade": "Nome Cidade",
+      "uf": "Uf",
+      "teatro": "Teatro"
+    }
+  }
+}

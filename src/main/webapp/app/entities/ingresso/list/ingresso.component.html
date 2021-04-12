@@ -1,0 +1,88 @@
+<div>
+  <h2 id="page-heading" data-cy="IngressoHeading">
+    <span jhiTranslate="sistemaTeatroApp.ingresso.home.title">Ingressos</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="sistemaTeatroApp.ingresso.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-ingresso"
+        [routerLink]="['/ingresso/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="sistemaTeatroApp.ingresso.home.createLabel"> Create a new Ingresso </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="ingressos?.length === 0">
+    <span jhiTranslate="sistemaTeatroApp.ingresso.home.notFound">No ingressos found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="ingressos && ingressos.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="sistemaTeatroApp.ingresso.idIngresso">Id Ingresso</span></th>
+          <th scope="col"><span jhiTranslate="sistemaTeatroApp.ingresso.dataCompra">Data Compra</span></th>
+          <th scope="col"><span jhiTranslate="sistemaTeatroApp.ingresso.valor">Valor</span></th>
+          <th scope="col"><span jhiTranslate="sistemaTeatroApp.ingresso.evento">Evento</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ingresso of ingressos; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/ingresso', ingresso.id, 'view']">{{ ingresso.id }}</a>
+          </td>
+          <td>{{ ingresso.idIngresso }}</td>
+          <td>{{ ingresso.dataCompra | formatMediumDatetime }}</td>
+          <td>{{ ingresso.valor }}</td>
+          <td>
+            <div *ngIf="ingresso.evento">
+              <a [routerLink]="['/evento', ingresso.evento?.id, 'view']">{{ ingresso.evento?.id }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/ingresso', ingresso.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/ingresso', ingresso.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(ingresso)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
