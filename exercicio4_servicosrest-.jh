@@ -1,0 +1,35 @@
+entity Ingresso{
+	idIngresso Integer
+    dataCompra ZonedDateTime
+    valor Double
+}
+entity Assento{
+	numeracao Integer
+	status Boolean
+}
+entity Cidade{
+	nomeCidade String
+    uf String
+}
+entity Usuario{
+	idUsuario Integer
+    nome String
+    cpf String
+}
+entity Evento {
+	idEvento String
+    nomeEvento String
+    descricao String
+}
+entity Teatro{
+	idTeatro Integer
+    nomeTeatro String
+    endereco String
+}
+relationship ManyToOne{
+	Usuario to Ingresso
+    Teatro to Cidade
+    Evento to Teatro
+    Ingresso to Evento
+    Assento to Teatro
+}
