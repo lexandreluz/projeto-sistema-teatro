@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="assento">
+      <h2 data-cy="assentoDetailsHeading"><span jhiTranslate="sistemaTeatroApp.assento.detail.title">Assento</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ assento.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistemaTeatroApp.assento.numeracao">Numeracao</span></dt>
+        <dd>
+          <span>{{ assento.numeracao }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistemaTeatroApp.assento.status">Status</span></dt>
+        <dd>
+          <span>{{ assento.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistemaTeatroApp.assento.teatro">Teatro</span></dt>
+        <dd>
+          <div *ngIf="assento.teatro">
+            <a [routerLink]="['/teatro', assento.teatro?.id, 'view']">{{ assento.teatro?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/assento', assento.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

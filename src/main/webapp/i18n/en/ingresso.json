@@ -1,0 +1,28 @@
+{
+  "sistemaTeatroApp": {
+    "ingresso": {
+      "home": {
+        "title": "Ingressos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ingresso",
+        "createOrEditLabel": "Create or edit a Ingresso",
+        "notFound": "No Ingressos found"
+      },
+      "created": "A new Ingresso is created with identifier {{ param }}",
+      "updated": "A Ingresso is updated with identifier {{ param }}",
+      "deleted": "A Ingresso is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ingresso {{ id }}?"
+      },
+      "detail": {
+        "title": "Ingresso"
+      },
+      "id": "ID",
+      "idIngresso": "Id Ingresso",
+      "dataCompra": "Data Compra",
+      "valor": "Valor",
+      "evento": "Evento",
+      "usuario": "Usuario"
+    }
+  }
+}

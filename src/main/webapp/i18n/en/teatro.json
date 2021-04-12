@@ -1,0 +1,29 @@
+{
+  "sistemaTeatroApp": {
+    "teatro": {
+      "home": {
+        "title": "Teatros",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Teatro",
+        "createOrEditLabel": "Create or edit a Teatro",
+        "notFound": "No Teatros found"
+      },
+      "created": "A new Teatro is created with identifier {{ param }}",
+      "updated": "A Teatro is updated with identifier {{ param }}",
+      "deleted": "A Teatro is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Teatro {{ id }}?"
+      },
+      "detail": {
+        "title": "Teatro"
+      },
+      "id": "ID",
+      "idTeatro": "Id Teatro",
+      "nomeTeatro": "Nome Teatro",
+      "endereco": "Endereco",
+      "cidade": "Cidade",
+      "evento": "Evento",
+      "assento": "Assento"
+    }
+  }
+}

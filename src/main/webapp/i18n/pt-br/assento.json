@@ -1,0 +1,26 @@
+{
+  "sistemaTeatroApp": {
+    "assento": {
+      "home": {
+        "title": "Assentos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Assento",
+        "createOrEditLabel": "Criar ou editar Assento",
+        "notFound": "Nenhum Assento encontrado"
+      },
+      "created": "Um novo Assento foi criado com o identificador {{ param }}",
+      "updated": "Um Assento foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Assento foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Assento {{ id }}?"
+      },
+      "detail": {
+        "title": "Assento"
+      },
+      "id": "ID",
+      "numeracao": "Numeracao",
+      "status": "Status",
+      "teatro": "Teatro"
+    }
+  }
+}

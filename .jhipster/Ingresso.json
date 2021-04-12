@@ -1,0 +1,41 @@
+{
+  "name": "Ingresso",
+  "fields": [
+    {
+      "fieldName": "idIngresso",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "dataCompra",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "valor",
+      "fieldType": "Double"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "evento",
+      "otherEntityRelationshipName": "ingresso",
+      "relationshipName": "evento"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "usuario",
+      "otherEntityRelationshipName": "ingresso",
+      "relationshipName": "usuario"
+    }
+  ],
+  "entityTableName": "ingresso",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210412225249"
+}

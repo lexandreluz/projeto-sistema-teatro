@@ -1,0 +1,31 @@
+{
+  "name": "Cidade",
+  "fields": [
+    {
+      "fieldName": "nomeCidade",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "uf",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "teatro",
+      "otherEntityRelationshipName": "cidade",
+      "relationshipName": "teatro"
+    }
+  ],
+  "entityTableName": "cidade",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210412225251"
+}

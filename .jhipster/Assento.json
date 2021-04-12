@@ -1,0 +1,31 @@
+{
+  "name": "Assento",
+  "fields": [
+    {
+      "fieldName": "numeracao",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "teatro",
+      "otherEntityRelationshipName": "assento",
+      "relationshipName": "teatro"
+    }
+  ],
+  "entityTableName": "assento",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210412225250"
+}

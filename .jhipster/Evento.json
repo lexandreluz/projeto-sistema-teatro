@@ -1,0 +1,41 @@
+{
+  "name": "Evento",
+  "fields": [
+    {
+      "fieldName": "idEvento",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomeEvento",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "teatro",
+      "otherEntityRelationshipName": "evento",
+      "relationshipName": "teatro"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ingresso",
+      "otherEntityRelationshipName": "evento",
+      "relationshipName": "ingresso"
+    }
+  ],
+  "entityTableName": "evento",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210412225253"
+}
